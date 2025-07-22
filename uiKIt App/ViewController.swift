@@ -8,12 +8,35 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    lazy var button : UIButton = {
+        let button = UIButton()
+        button.setTitle("Tap Me", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(didTapBtn), for: .touchUpInside)
+        
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        view.backgroundColor = .systemRed
+        configUI()
     }
 
+    func configUI () {
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    @objc func didTapBtn() {
+        self.navigationController?.pushViewController(NextViewController(), animated: true)
+    }
 
 }
 
