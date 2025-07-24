@@ -1,18 +1,16 @@
 //
-//  NextViewController.swift
+//  SearchViewController.swift
 //  uiKIt App
 //
-//  Created by Kerolos on 23/07/2025.
+//  Created by Kerolos on 24/07/2025.
 //
 
 import UIKit
 
-class NextViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
-        view.largeContentTitle = "kk"
 
         // Do any additional setup after loading the view.
     }

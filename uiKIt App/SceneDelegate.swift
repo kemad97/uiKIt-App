@@ -20,10 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
-        window.rootViewController = UINavigationController(rootViewController: ViewController() )
-         
+       // window.rootViewController = UINavigationController(rootViewController: HomeViewController() )
+        window.rootViewController = TabBarViewController()
         self.window = window
         
+    }
+    
+    func changeWindowViewController (vc:UIViewController ){
+        guard let window = window else {return}
+        window.rootViewController = vc
+       // UIView.transition(with: window, duration: 0.5, animations :)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
